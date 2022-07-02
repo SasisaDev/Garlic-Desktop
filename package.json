@@ -1,0 +1,47 @@
+{
+  "name": "garlic",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx electron ./build/App.js",
+    "unix": "npm run unix-build && npm run test",
+    "win": "npm run win-build && npm run test",
+    "unix-build": "npm run unix-build-server && npm run build-client",
+    "unix-build-server": "rm -rf ./build/server && tsc --project ./src",
+    "win-build-server": "rmdir /s /q /build/server/ && tsc --project /src",
+    "win-build": "npm run win-build-server && npm run build-client",
+    "build-client": "webpack"
+  },
+  "keywords": [],
+  "author": {
+    "name": "SasisaDev",
+    "email": "Sasisa@vskami.com",
+    "url": "http://vskami.com/"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.18.6",
+    "@babel/plugin-transform-typescript": "^7.18.6",
+    "@babel/preset-env": "^7.18.6",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/preset-typescript": "^7.18.6",
+    "babel-loader": "^8.2.5",
+    "css-loader": "^6.7.1",
+    "file-loader": "^6.2.0",
+    "sass": "^1.53.0",
+    "sass-loader": "^13.0.2",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^9.3.1",
+    "typescript": "^4.7.4",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0"
+  },
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "electron": "^19.0.7",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

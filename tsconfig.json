@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+      "outDir": "../build",
+      "noImplicitAny": false,
+      "module": "es6",
+      "target": "es5",
+      "jsx": "react",
+      "allowJs": true,
+      "moduleResolution": "node",
+      "allowSyntheticDefaultImports": true
+    },
+    "exclude": [
+        "src/App.ts",
+        "src/server",
+    ],
+    //"include": ["../client.d.ts"]
+}
