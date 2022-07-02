@@ -16,7 +16,8 @@ function createWindow () {
       webgl: true,
       transparent: true,
       minWidth: 725,
-      minHeight: 500
+      minHeight: 500,
+      vibrancy: 'ultra-dark',
     } as any)
 
     mw.Register(mainWindow);

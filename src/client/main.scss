@@ -1,0 +1,29 @@
+
+body {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.MainWindowBody {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: column;
+}
+
+.AppHeader {
+    display: flex;
+
+    width:100vw;
+    height: 20px;
+    
+    background-color: rgb(25,25,25);
+
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-app-region: drag;
+}
+
+.AppBody {
+    display: block;
+    flex-grow: 1;
+}

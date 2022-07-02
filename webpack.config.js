@@ -21,6 +21,7 @@ module.exports = {
           "three": path.resolve(__dirname, 'node_modules/three'),
           "sharp": path.resolve(__dirname, 'node_modules/sharp'),
           "bootstrap": path.resolve(__dirname, 'node_modules/bootstrap/'),
+          "redux": path.resolve(__dirname, 'node_modules/redux'),
         } 
       },
     mode: 'development',
