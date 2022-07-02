@@ -23,7 +23,15 @@ export default function Selector() {
         <div className="SelectorBody">
             <GuildSelector />
             <div className="UserBody">
-                
+                <div className="UserAvatar">
+
+                </div>
+                <div className="UserState">
+
+                </div>
+                <div className="UserFunctionals">
+
+                </div>
             </div>
         </div>
     )

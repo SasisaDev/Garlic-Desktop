@@ -27,3 +27,42 @@ body {
     display: block;
     flex-grow: 1;
 }
+
+.Logo {
+    width: 100%;
+}
+
+.ControlButtons {
+    display: flex;
+    flex-direction: row-reverse;
+
+    -webkit-user-select: auto;
+    user-select: auto;
+    -webkit-app-region: no-drag;
+}
+
+.ControlButton {
+    display: block-inline;
+    background-color: rgb(25, 25, 25);
+
+    height:100%;
+    width:30px;
+
+    -webkit-user-select: auto;
+    user-select: auto;
+    -webkit-app-region: no-drag;
+
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-weight: 100;
+    color: rgb(200,200,200);
+
+    &:hover {
+        background-color: rgb(35,35,35);
+    }
+}
+
+.btn0:hover {
+    background-color: rgb(224, 39, 39);
+}
