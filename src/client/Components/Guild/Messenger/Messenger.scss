@@ -1,9 +1,52 @@
 
 .MessengerBody {
-    display: block;
+    display: flex;
 
     background-color: #161616;
 
     width: 100%;
     height: 100%;
+
+    flex-direction: column;
+}
+
+.MessengerMessages {
+    display: flex;
+
+    height:100%;
+    width:100%;
+}
+
+.MessengerInputBody {
+    display: flex;
+
+    padding: 16px;
+
+    .MessengerInput {
+        background-color: rgb(42, 42, 42);
+        outline: none;
+        color: white;
+        border-color: transparent;
+        border-radius: 10px;
+        width: 100%;
+        height: 100%;
+
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+
+    .MessengerInputSend {
+        background-color: rgb(50, 102, 199);
+        border-radius: 20px;
+        width: 100%;
+        height: 100%;
+        max-width: 28px;
+        min-width: 28px;
+
+        margin-left: 16px;
+
+        &:hover {
+            background-color: rgb(59, 117, 226);
+        }
+    }
 }

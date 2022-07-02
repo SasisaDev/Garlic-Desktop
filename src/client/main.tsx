@@ -9,6 +9,8 @@ import MainWindow from "./MainWindow"
 import {createStore} from "redux"
 
 // Setting up global variables
+(window as any).GAPI = "localhost";
+
 (window as any).HandleControl = (control: number) =>
 {
     if(control === 0) {
