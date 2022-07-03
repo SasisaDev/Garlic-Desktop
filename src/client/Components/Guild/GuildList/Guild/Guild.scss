@@ -1,0 +1,22 @@
+
+
+.Guild {
+    background-color: rgb(42, 42, 42);
+    border-radius: 20px;
+
+    width: 100%;
+    height: 100%;
+
+    cursor: pointer;
+
+    transition-delay: 0ms;
+    transition: border-radius 500ms;
+
+    &:hover {
+        background-color: rgb(51, 51, 51);
+        border-radius: 12px;
+
+        transition-delay: 0ms;
+        transition: border-radius 500ms;
+    }
+}
