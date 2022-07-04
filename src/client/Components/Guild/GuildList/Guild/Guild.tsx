@@ -2,10 +2,14 @@ import React from "react"
 
 import "./Guild.scss"
 
-export default function Guild({icon}) {
+import AppGuild from "../../../../Application/Guild"
+
+export default function Guild({guild, onClick=()=>{}}) {
     return (
         <div className="Guild">
-            <img src={icon}></img>
+            {
+            //<img className="Guild" src={icon}></img>
+            }
         </div>
     )
 } 

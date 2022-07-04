@@ -1,4 +1,6 @@
 import React, {useEffect} from "react"
+import { Provider } from "react-redux"
+import { reduxStore } from "./Application/Redux/Store"
 
 import GuildBody from "./Components/GuildBody"
 
@@ -43,9 +45,11 @@ function Body()
 export default function MainWindow()
 {
     return (
-        <div className="MainWindowBody">
-            <Header />
-            <Body />
-        </div>
+        <Provider store={reduxStore}>
+            <div className="MainWindowBody">
+                <Header />
+                <Body />
+            </div>
+        </Provider>
     )
 }

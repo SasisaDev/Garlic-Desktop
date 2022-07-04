@@ -7,12 +7,12 @@ export default function GuildList() {
     return (
         <div className="GuildListBody">
             <div className="GuildListButtonPlace">
-                <Guild icon="Assets/Friends.png"/>
+                <Guild guild={null}/>
             </div>
             <div className="Separator" />
             <div className="GuildListList">
-
-                <Guild icon="Assets/Create.png"/>
+                
+                <Guild guild={null}/>
             </div>
         </div>
     )

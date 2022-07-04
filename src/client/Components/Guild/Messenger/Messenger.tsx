@@ -10,7 +10,7 @@ export default function Messenger() {
             </div>
             <div className="MessengerInputBody">
                 <input className="MessengerInput"></input>
-                <div className="MessengerInputSend"></div>
+                <div className="MessengerInputSend">{'>'}</div>
             </div>
         </div>
     )

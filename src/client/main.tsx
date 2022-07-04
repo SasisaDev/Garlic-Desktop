@@ -6,8 +6,6 @@ import "./main.scss"
 
 import MainWindow from "./MainWindow"
 
-import {configureStore} from "@reduxjs/toolkit"
-
 // Setting up global variables
 (window as any).GAPI = "localhost";
 

@@ -1,4 +1,6 @@
 import React from "react"
+import { useSelector } from "react-redux"
+import { ViewMode } from "../../../Application/Redux/Slice"
 
 import "./Selector.scss"
 
@@ -19,9 +21,18 @@ function FriendSelector() {
 } 
 
 export default function Selector() {
+    const viewMode = useSelector(state => (state as any).ViewMode)
+
     return (
         <div className="SelectorBody">
+            {
+            (viewMode == ViewMode.Guilds) ?
+            (
             <GuildSelector />
+            ) : (
+            <FriendSelector />
+            )
+            }
             <div className="UserBody">
                 <div className="UserAvatar">
                     <div className="UserAvatarIcon" />

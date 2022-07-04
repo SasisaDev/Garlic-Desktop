@@ -15,6 +15,8 @@
 
     height:100%;
     width:100%;
+
+    -webkit-user-select: auto;
 }
 
 .MessengerInputBody {
@@ -43,7 +45,12 @@
         max-width: 28px;
         min-width: 28px;
 
-        margin-left: 16px;
+        margin-left: 8px;
+
+        cursor: pointer;
+
+        text-align: center;
+        color: white;
 
         &:hover {
             background-color: rgb(59, 117, 226);

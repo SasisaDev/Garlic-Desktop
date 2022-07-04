@@ -22,6 +22,7 @@ module.exports = {
           "sharp": path.resolve(__dirname, 'node_modules/sharp'),
           "bootstrap": path.resolve(__dirname, 'node_modules/bootstrap/'),
           "redux": path.resolve(__dirname, 'node_modules/redux'),
+          "react-redux": path.resolve(__dirname, 'node_modules/react-redux'),
           "@reduxjs/toolkit": path.resolve(__dirname, 'node_modules/redux/toolkit'),
         } 
       },
