@@ -5,10 +5,17 @@ export enum ViewMode {
     Guilds
 };
 
+export enum ScreenView {
+    Auth,
+    Guilds,
+    Settings
+};
+
 const GarlicSlice = createSlice({
     name: "garlic",
     initialState: {
-        viewMode: ViewMode.Guilds
+        viewMode: ViewMode.Guilds,
+        screen: ScreenView.Guilds
     },
     reducers: {
         SwitchViewMode(state, mode: PayloadAction<ViewMode>) {

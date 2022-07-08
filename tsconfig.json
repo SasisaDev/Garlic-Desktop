@@ -12,6 +12,6 @@
     "exclude": [
         "src/App.ts",
         "src/server",
-    ],
+    ]
     //"include": ["../client.d.ts"]
 }

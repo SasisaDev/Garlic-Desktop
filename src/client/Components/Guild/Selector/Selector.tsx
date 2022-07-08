@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { useSelector } from "react-redux"
 import { ViewMode } from "../../../Application/Redux/Slice"
 
@@ -21,7 +21,12 @@ function FriendSelector() {
 } 
 
 export default function Selector() {
-    const viewMode = useSelector(state => (state as any).ViewMode)
+    const viewMode = useSelector(state => (state as any).garlic.viewMode)
+
+    useEffect(()=>
+    {
+        console.log(viewMode)
+    })
 
     return (
         <div className="SelectorBody">

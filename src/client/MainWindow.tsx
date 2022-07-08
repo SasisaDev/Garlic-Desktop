@@ -1,6 +1,8 @@
 import React, {useEffect} from "react"
-import { Provider } from "react-redux"
+import { Provider, useSelector } from "react-redux"
+import { ScreenView } from "./Application/Redux/Slice"
 import { reduxStore } from "./Application/Redux/Store"
+import AuthBody from "./Components/AuthBody"
 
 import GuildBody from "./Components/GuildBody"
 
@@ -35,9 +37,18 @@ function Header()
 
 function Body()
 {
+    const Screen = useSelector(state => (state as any).garlic.screen);
+
     return (
     <div className="AppBody">
-        <GuildBody />
+        { (Screen == ScreenView.Guilds) ?
+            <GuildBody /> 
+        : (Screen == ScreenView.Auth) ?
+           <AuthBody />
+        : (Screen == ScreenView.Settings) ?
+            <h2 />
+        : null
+        }
     </div>
     )
 }

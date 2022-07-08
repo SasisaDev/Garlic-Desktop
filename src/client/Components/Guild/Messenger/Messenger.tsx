@@ -6,7 +6,7 @@ export default function Messenger() {
     return (
         <div className="MessengerBody">
             <div className="MessengerMessages">
-
+                
             </div>
             <div className="MessengerInputBody">
                 <input className="MessengerInput"></input>
@@ -14,4 +14,4 @@ export default function Messenger() {
             </div>
         </div>
     )
-} 
+}

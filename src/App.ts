@@ -5,6 +5,7 @@ const m_os = require('os')
 
 const mw = require('./server/Multiwindow')
 
+const Popup = require("./server/Popup")
 //const DarwinMenu = require('./server/DarwinMenu')
 
 function createWindow () {
@@ -69,6 +70,10 @@ function createWindow () {
       {
         console.log('ELECTRON: Unable to close window ' + winid + ' because of undefined')
       }
+    })
+
+    ipcMain.on('pop:emoji', () => {
+      Popup.CreatePopup(mainWindow, "", {x: 0, y: 0});
     })
   
     mainWindow.loadFile(path.join(__dirname,'client/main.html'))

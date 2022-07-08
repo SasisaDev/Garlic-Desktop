@@ -5,4 +5,5 @@ export default class Friend {
     Username: string;
     Motd: string;
 
+    
 }
