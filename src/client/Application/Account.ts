@@ -1,10 +1,9 @@
-
+import Object from "./Object"
 import Guild from "./Guild";
 import Friend from "./Friend";
 
-export default class Account {
+export default class Account extends Object{
     private AccessToken: string;
-    private ID: string;
     Username: string;
 
     Guilds: Guild[] = [];

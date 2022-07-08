@@ -1,4 +1,8 @@
+import Object from "./Object"
 
-export default class Message {
-    private ID: String;
+import Account from "./Account"
+
+export default class Message extends Object{
+    Account: Account;
+    Message: string;
 }

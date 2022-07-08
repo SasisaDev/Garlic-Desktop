@@ -1,4 +1,4 @@
-const {app, BrowserWindow, ipcMain, Menu} = require('electron');
+const {app, BrowserWindow, ipcMain, Menu, Tray} = require('electron');
 //const { default: installExtension, REACT_DEVELOPER_TOOLS } = require('electron-devtools-installer');
 const path = require('path')
 const m_os = require('os')
@@ -78,13 +78,28 @@ function createWindow () {
   
     mainWindow.loadFile(path.join(__dirname,'client/main.html'))
 }
-  
+
+var tray;
 app.whenReady().then(() => {
   //const menu = Menu.buildFromTemplate(DarwinMenu)
   
   //Menu.setApplicationMenu(menu)
+
+  try {
+    tray = new Tray('path/to/icon')
+    const contextMenu = Menu.buildFromTemplate([
+      { label: 'Open', type: 'button' },
+      { label: 'Exit', type: 'button' },
+    ])
+    tray.setToolTip('Garlic')
+    tray.setContextMenu(contextMenu)
+  } catch(err) {
+
+  }
   
   createWindow()
+
+  Popup.PopupHandler.StartUpdate()
 
   app.on('activate', function () {
       if (BrowserWindow.getAllWindows().length === 0) createWindow()
@@ -93,4 +108,6 @@ app.whenReady().then(() => {
 
 app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') app.quit()
+
+  Popup.PopupHandler.StopUpdate()
 })
