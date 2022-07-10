@@ -1,3 +1,5 @@
+
+
 class Multiwindow {
     private static Registry = new Set<any>();
     

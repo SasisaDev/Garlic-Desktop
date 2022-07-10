@@ -1,15 +1,19 @@
 const {app, BrowserWindow, ipcMain, Menu, Tray} = require('electron');
 //const { default: installExtension, REACT_DEVELOPER_TOOLS } = require('electron-devtools-installer');
+const axios = require('axios');
 const path = require('path')
 const m_os = require('os')
+const fs = require('fs');
 
 const mw = require('./server/Multiwindow')
 
 const Popup = require("./server/Popup")
 //const DarwinMenu = require('./server/DarwinMenu')
 
+var mainWindow;
+
 function createWindow () {
-    const mainWindow = new BrowserWindow({
+    mainWindow = new BrowserWindow({
       webPreferences: {
         preload: path.join(__dirname, 'server/preloads/main.preload.js')
       },
@@ -32,7 +36,8 @@ function createWindow () {
     })
 
     ipcMain.on('app:close', (event) => {
-      app.quit()
+      //app.quit()
+      mainWindow.hide();
     })
     ipcMain.on('app:minmax', (event) => {
       if (mainWindow.isMaximized()) {
@@ -53,6 +58,13 @@ function createWindow () {
 
     ipcMain.handle('app:ismax', async () => {
       return mainWindow.isMaximized();
+    })
+
+    ipcMain.handle('net:multipart', async (event, url, filename) => {
+      const formData = new FormData();
+      formData.append('attachment', fs.createReadStream(filename));
+      return axios.post(url, formData, {
+        headers: { 'Content-Type': 'multipart/form-data' }});
     })
 
     ipcMain.handle('app:getplatform', () => {
@@ -85,19 +97,33 @@ app.whenReady().then(() => {
   
   //Menu.setApplicationMenu(menu)
 
-  try {
-    tray = new Tray('path/to/icon')
-    const contextMenu = Menu.buildFromTemplate([
-      { label: 'Open', type: 'button' },
-      { label: 'Exit', type: 'button' },
-    ])
-    tray.setToolTip('Garlic')
-    tray.setContextMenu(contextMenu)
-  } catch(err) {
-
-  }
-  
   createWindow()
+
+  try {
+    tray = new Tray(path.join(__dirname, '/Assets/icon'))
+      .on('click', (a, b, c) => {
+        mainWindow.show();
+      })
+    const contextMenu = Menu.buildFromTemplate([
+      { 
+        label: 'Open',
+        click: async () => {
+          mainWindow.show();
+        }
+      },
+      { 
+        label: 'Exit', 
+        click: async () => {
+          app.quit();
+        }
+      },
+    ])
+    tray.setToolTip('Garlic Desktop')
+    tray.setContextMenu(contextMenu)
+    
+  } catch(err) {
+    console.log(err)
+  }
 
   Popup.PopupHandler.StartUpdate()
 

@@ -10,5 +10,7 @@ contextBridge.exposeInMainWorld('electron', {
     minimizeApp: () => ipcRenderer.send('app:min'),
     isMaximizedApp: () => ipcRenderer.invoke('app:ismax'),
 
+    SendMultipartRequest: (uri, filepath) => ipcRenderer.invoke('net:multipart', uri, filepath),
+
     NewProject: async (path) => ipcRenderer.invoke('proj:new'),
 })
