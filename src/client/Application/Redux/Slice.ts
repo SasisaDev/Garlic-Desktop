@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import Guild from "../../Application/Guild";
+import Account from "../Account";
 
 export enum ViewMode {
     Friends,
@@ -17,19 +18,17 @@ const GarlicSlice = createSlice({
     initialState: {
         viewMode: ViewMode.Guilds,
         screen: ScreenView.Guilds,
-        guilds: new Set<Guild>,
+        account: null,
         currentGuild: null,
+        currentChannel: null
     },
     reducers: {
         SwitchViewMode(state, mode: PayloadAction<ViewMode>) {
             state.viewMode = mode.payload;
         },
 
-        AddGuild(state, guild: PayloadAction<Guild>) {
-            state.guilds.add(guild.payload);
-        },
-        RemoveGuild(state, guild: PayloadAction<Guild>) {
-            state.guilds.delete(guild.payload);
+        SetCurrentGuild(state, account: PayloadAction<Account>) {
+            state.account = account.payload;
         },
 
         SetCurrentGuild(state, guild: PayloadAction<Guild>) {

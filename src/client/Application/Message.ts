@@ -5,4 +5,5 @@ import Account from "./Account"
 export default class Message extends Object{
     Account: Account;
     Message: string;
+    GuildID: string;
 }
