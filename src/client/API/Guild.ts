@@ -8,16 +8,18 @@ export default class Guild extends Object{
     Name: string;
     Icon: string;
 
-    constructor(id: string) {
+    constructor(id: string, init: boolean = true) {
         super(id);
 
-        fetch(GarlicAPI + `/guild/${this.GetID()}?token=${Account.GetToken()}`)
-        .then((response)=>{
-            response.json().then((json)=>{
-                this.Name = json.name;
-                this.Icon = json.icon;
+        if(init) {
+            fetch(GarlicAPI + `/guild/${this.GetID()}?token=${Account.GetToken()}`)
+            .then((response)=>{
+                response.json().then((json)=>{
+                    this.Name = json.name;
+                    this.Icon = json.icon;
+                })
             })
-        })
+        }
     }
 
     GetChannel(id: string): Channel {

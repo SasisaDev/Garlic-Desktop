@@ -130,6 +130,15 @@ app.whenReady().then(() => {
   app.on('activate', function () {
       if (BrowserWindow.getAllWindows().length === 0) createWindow()
   })
+
+  app.makeSingleInstance(function(commandLine, workingDirectory) {
+    // Someone tried to run a second instance, we should focus our window.
+    if (mainWindow) {
+      if (mainWindow.isMinimized()) mainWindow.restore();
+      mainWindow.show();
+      mainWindow.focus();
+    }
+  });
 })
 
 app.on('window-all-closed', function () {

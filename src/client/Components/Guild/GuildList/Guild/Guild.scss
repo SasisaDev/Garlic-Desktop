@@ -18,7 +18,7 @@
     transition: border-radius 500ms;
 
     &:hover {
-        background-color: rgb(51, 51, 51);
+        background-color: rgb(235, 142, 67);
         border-radius: 12px;
 
         transition-delay: 0ms;
@@ -27,6 +27,14 @@
 
     &.Active {
         background-color: rgb(235, 142, 67);
+        border-radius: 12px;
+
+        transition-delay: 0ms;
+        transition: border-radius 500ms;
+    }
+
+    &.AddServer:hover {
+        background-color: rgb(95, 211, 91);
         border-radius: 12px;
 
         transition-delay: 0ms;

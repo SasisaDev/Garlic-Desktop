@@ -44,4 +44,16 @@ export default class Account extends Object{
     RemoveGuild(GuildID: string) {
 
     }
+
+    GetGuild(GuildID: string): Guild {
+        let ret: Guild = null;
+        
+        this.Guilds.forEach(guild => {
+            if(guild.GetID() === GuildID) {
+                ret = guild;
+            }
+        })
+
+        return ret;
+    }
 }

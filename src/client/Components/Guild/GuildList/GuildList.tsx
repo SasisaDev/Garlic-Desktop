@@ -15,7 +15,7 @@ export default function GuildList() {
             }
             <div className="GuildListList">
                 
-                <Guild guild={null}/>
+                <Guild guild={'AddServer'}/>
             </div>
         </div>
     )

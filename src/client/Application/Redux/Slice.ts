@@ -19,7 +19,7 @@ const GarlicSlice = createSlice({
         viewMode: ViewMode.Friends,
         screen: ScreenView.Guilds,
         account: null,
-        currentGuild: null,
+        currentGuild: "Friends",
         currentChannel: null
     },
     reducers: {

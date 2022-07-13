@@ -8,7 +8,7 @@ import MainWindow from "./MainWindow"
 import Guild from "./API/Guild";
 
 // Setting up global variables
-(window as any).FriendsGuild = new Guild("Friends");
+(window as any).FriendsGuild = new Guild("Friends", false);
 
 (window as any).Account = null;
 
