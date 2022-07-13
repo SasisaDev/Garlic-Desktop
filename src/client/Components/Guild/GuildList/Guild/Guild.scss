@@ -24,4 +24,12 @@
         transition-delay: 0ms;
         transition: border-radius 500ms;
     }
+
+    &.Active {
+        background-color: rgb(235, 142, 67);
+        border-radius: 12px;
+
+        transition-delay: 0ms;
+        transition: border-radius 500ms;
+    }
 }

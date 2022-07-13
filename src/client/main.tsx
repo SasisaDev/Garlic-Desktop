@@ -5,9 +5,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import "./main.scss"
 
 import MainWindow from "./MainWindow"
+import Guild from "./API/Guild";
 
 // Setting up global variables
-(window as any).GAPI = "localhost";
+(window as any).FriendsGuild = new Guild("Friends");
+
+(window as any).Account = null;
 
 (window as any).HandleControl = (control: number) =>
 {

@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import Guild from "../../Application/Guild";
-import Account from "../Account";
+import Guild from "../../API/Guild";
+import Account from "../../API/Account";
 
 export enum ViewMode {
     Friends,
@@ -16,7 +16,7 @@ export enum ScreenView {
 const GarlicSlice = createSlice({
     name: "garlic",
     initialState: {
-        viewMode: ViewMode.Guilds,
+        viewMode: ViewMode.Friends,
         screen: ScreenView.Guilds,
         account: null,
         currentGuild: null,
@@ -27,15 +27,15 @@ const GarlicSlice = createSlice({
             state.viewMode = mode.payload;
         },
 
-        SetCurrentGuild(state, account: PayloadAction<Account>) {
+        SetAccount(state, account: PayloadAction<Account>) {
             state.account = account.payload;
         },
 
-        SetCurrentGuild(state, guild: PayloadAction<Guild>) {
+        SetCurrentGuild(state, guild: PayloadAction<string>) {
             state.currentGuild = guild.payload;
         }
     }
 });
 
 export default GarlicSlice.reducer;
-export const {SwitchViewMode} = GarlicSlice.actions
+export const {SwitchViewMode, SetAccount, SetCurrentGuild} = GarlicSlice.actions
