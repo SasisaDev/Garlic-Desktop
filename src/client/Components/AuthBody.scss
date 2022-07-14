@@ -4,5 +4,21 @@
     width:100%;
     height:100%;
 
-    background-color: #232323;
+    background-color: #222222;
+}
+
+.AuthPopupBody {
+    background-color: #2e2e2e;
+
+    $_width: 350px;
+    $_height: 250px;
+
+    width: $_width;
+    height: $_height;
+
+    transform-origin: center center;
+
+    transform: translate(-50%, -50%) translate(50vw, 50vh);
+
+    border-radius: 8px;
 }

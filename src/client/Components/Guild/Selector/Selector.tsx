@@ -1,20 +1,36 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
+import Account from "../../../API/Account"
+import Guild from "../../../API/Guild"
 import { ViewMode } from "../../../Application/Redux/Slice"
+import ChannelSelector from "./ChannelSelector/ChannelSelector"
 
 import "./Selector.scss"
 
 function GuildSelector() {
-    return (
-        <div className="GuildSelectorBody">
+    const guildID = useSelector(state => (state as any).garlic.currentGuild)
 
+    const [guild, setGuild] = useState<Guild>(null);
+
+    useEffect(()=>{
+        if((window as any).Account) {
+            setGuild(((window as any).Account as Account).GetGuild(guildID));
+        }
+    }, [guildID])
+
+    return (
+        <div className="ChildSelectorBody">
+            <div className="GuildHeader">
+
+            </div>
+            <ChannelSelector guild={guild}/>
         </div>
     )
 } 
 
 function FriendSelector() {
     return (
-        <div className="FriendSelectorBody">
+        <div className="ChildSelectorBody">
 
         </div>
     )
@@ -33,7 +49,7 @@ export default function Selector() {
             {
             (viewMode == ViewMode.Guilds) ?
             (
-            <GuildSelector />
+            <GuildSelector/>
             ) : (
             <FriendSelector />
             )

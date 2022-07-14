@@ -14,7 +14,9 @@ import "./AuthBody.scss"
 export default function AuthBody() {
     return (
         <div className="AuthBody">
-
+            <div className="AuthPopupBody">
+                
+            </div>
         </div>
     )
 }

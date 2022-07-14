@@ -17,7 +17,7 @@ const GarlicSlice = createSlice({
     name: "garlic",
     initialState: {
         viewMode: ViewMode.Friends,
-        screen: ScreenView.Guilds,
+        screen: ScreenView.Auth,
         account: null,
         currentGuild: "Friends",
         currentChannel: null
