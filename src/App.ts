@@ -17,6 +17,7 @@ function createWindow () {
       webPreferences: {
         preload: path.join(__dirname, 'server/preloads/main.preload.js')
       },
+      icon: path.join(__dirname, 'Assets/icon'),
       frame: false,
       webgl: true,
       transparent: true,

@@ -24,7 +24,7 @@ function Header()
     return (
     <div className="AppHeader">
         <div className="Logo">
-
+            <p className="HeaderLogoText">GARLIC</p>
         </div>
         <div className="ControlButtons">
             <ControlButton control={0}>X</ControlButton>

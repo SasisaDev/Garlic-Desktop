@@ -31,6 +31,8 @@ body {
 
 .Logo {
     width: 100%;
+
+    align-self: center;
 }
 
 .ControlButtons {
@@ -64,4 +66,21 @@ body {
 
 .btn0:hover {
     background-color: rgb(224, 39, 39);
+}
+
+@font-face {
+    font-family: Cairo;
+    src: local("Cairo"), local("Cairo Bold"),
+        url("./Assets/fonts/cairo.ttf");
+    font-weight: bold;
+}
+
+.HeaderLogoText {
+    display: inline;
+
+    font-family: 'Cairo';
+    font-size: 10pt;
+    margin-left: 4px;
+
+    color: #c8c8c8;
 }

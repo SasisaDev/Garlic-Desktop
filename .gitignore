@@ -48,6 +48,7 @@ build/*
 build/client/*
 !build/client/Assets
 !build/client/*.html
+!build/Assets
 
 # Dependency directories
 node_modules/
