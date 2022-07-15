@@ -1,0 +1,14 @@
+
+.ButtonBody {
+    background-color: #FFB16D;
+    color: white;
+
+    padding: 5px 10px 5px 10px;
+
+    text-align: center;
+
+    &:hover {
+        background-color: #ffbe85;
+        cursor: pointer;
+    }
+}

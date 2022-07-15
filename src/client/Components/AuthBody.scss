@@ -8,10 +8,15 @@
 }
 
 .AuthPopupBody {
+    display:flex;
+    padding: 16px;
+
+    flex-direction: column;
+
     background-color: #2e2e2e;
 
-    $_width: 350px;
-    $_height: 250px;
+    $_width: 450px;
+    $_height: 350px;
 
     width: $_width;
     height: $_height;
@@ -21,4 +26,52 @@
     transform: translate(-50%, -50%) translate(50vw, 50vh);
 
     border-radius: 8px;
+
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+h2.AuthText {
+    color: white;
+    text-align: center;
+    margin-bottom: 5px;
+}
+
+h5.AuthText {
+    color: #A1A1A1;
+
+    font-size: 10pt;
+    text-align: center;
+    margin-bottom: 2px;
+
+    font-weight: 300;
+}
+
+.AuthButton {
+    width:80%;
+    font-weight: 500;
+}
+
+.AuthInputs {
+    width:80%;
+    height:fit-content;
+
+    margin: 10px 0px 20px 0px;
+}
+
+h5.AuthTextHyperlink {
+    display: inline;
+    color: #FFB16D;
+
+    font-size: 10pt;
+    text-align: center;
+    margin-bottom: 2px;
+
+    font-weight: 300;
+
+    &:hover {
+        color: #ffbc81;
+        cursor: pointer;
+    }
 }

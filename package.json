@@ -2,7 +2,7 @@
   "name": "garlic",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./build/App.js",
   "scripts": {
     "test": "npx electron ./build/App.js",
     "unix": "npm run unix-build && npm run test",
