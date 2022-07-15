@@ -27,6 +27,10 @@ const GarlicSlice = createSlice({
             state.viewMode = mode.payload;
         },
 
+        SetScreen(state, mode: PayloadAction<ScreenView>) {
+            state.screen = mode.payload;
+        },
+
         SetAccount(state, account: PayloadAction<Account>) {
             state.account = account.payload;
         },
@@ -38,4 +42,4 @@ const GarlicSlice = createSlice({
 });
 
 export default GarlicSlice.reducer;
-export const {SwitchViewMode, SetAccount, SetCurrentGuild} = GarlicSlice.actions
+export const {SwitchViewMode, SetAccount, SetCurrentGuild, SetScreen} = GarlicSlice.actions

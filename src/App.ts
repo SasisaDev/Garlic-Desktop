@@ -1,4 +1,4 @@
-const {app, BrowserWindow, ipcMain, Menu, Tray} = require('electron');
+const {app, BrowserWindow, ipcMain, Menu, Tray, shell} = require('electron');
 //const { default: installExtension, REACT_DEVELOPER_TOOLS } = require('electron-devtools-installer');
 const axios = require('axios');
 const path = require('path')
@@ -30,6 +30,10 @@ function createWindow () {
 
     mainWindow.webContents.openDevTools()
   
+    ipcMain.on('url:external', (event, url) => {
+      shell.openExternal(url);
+    })
+
     ipcMain.on('set-title', (event, title) => {
       const webContents = event.sender
       const win = BrowserWindow.fromWebContents(webContents)

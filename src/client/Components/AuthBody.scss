@@ -46,6 +46,17 @@ h5.AuthText {
     margin-bottom: 2px;
 
     font-weight: 300;
+
+    &.Remark {
+        position: relative;
+        top: -5px;
+        font-weight: 200 !important;
+        text-align: start;
+
+        margin-left: 10%;
+        margin-top: 5px;
+        place-self: flex-start;
+    }
 }
 
 .AuthButton {
@@ -73,5 +84,11 @@ h5.AuthTextHyperlink {
     &:hover {
         color: #ffbc81;
         cursor: pointer;
+    }
+
+    &.Remark {
+        position: relative;
+        top: -5px;
+        font-weight: 200 !important;
     }
 }
