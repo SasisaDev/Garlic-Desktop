@@ -6,10 +6,12 @@ import "./main.scss"
 
 import MainWindow from "./MainWindow"
 import Guild from "./API/Guild";
+import GarlicApplication from "./API/Garlic";
 
 // Setting up global variables
 (window as any).FriendsGuild = new Guild("Friends", false);
 
+(window as any).Application = new GarlicApplication("TOKEN");
 (window as any).Account = null;
 
 (window as any).HandleControl = (control: number) =>

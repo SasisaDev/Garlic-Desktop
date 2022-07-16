@@ -10,6 +10,8 @@ const mw = require('./server/Multiwindow')
 const Popup = require("./server/Popup")
 //const DarwinMenu = require('./server/DarwinMenu')
 
+const Cookie = require("./server/Cookie")
+
 var mainWindow;
 
 function createWindow () {
@@ -74,6 +76,14 @@ function createWindow () {
 
     ipcMain.handle('app:getplatform', () => {
       return m_os.platform();
+    })
+
+    ipcMain.on('cookie:set', (event, cookie) => {
+      Cookie.UpdateCookies(cookie);
+    })
+
+    ipcMain.handle('cookie:get', () => {
+      return Cookie.GetCookies();
     })
 
     ipcMain.on('mw:close', (event, winid) => {

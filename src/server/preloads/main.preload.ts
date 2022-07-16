@@ -12,6 +12,9 @@ contextBridge.exposeInMainWorld('electron', {
 
     openExternalURL: (url) => ipcRenderer.send('url:external', url),
 
+    SetCookie: (cookie) => ipcRenderer.send('cookie:set', cookie),
+    GetCookie: () => ipcRenderer.invoke('cookie:get'),
+
     SendMultipartRequest: (uri, filepath) => ipcRenderer.invoke('net:multipart', uri, filepath),
 
     NewProject: async (path) => ipcRenderer.invoke('proj:new'),
