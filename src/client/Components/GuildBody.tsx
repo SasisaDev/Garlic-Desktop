@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 
 import GuildList from "./Guild/GuildList/GuildList"
 import Selector from "./Guild/Selector/Selector"
@@ -12,11 +12,16 @@ import {reduxStore} from "../Application/Redux/Store"
 import "./GuildBody.scss"
 
 export default function GuildBody() {
+
+    useEffect(()=> {
+
+    }, [])
+
     return (
         <div className="GuildBody">
             <GuildList />
             <Selector />
-            <Messenger />
+            <Messenger channel={null}/>
         </div>
     )
 }

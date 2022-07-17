@@ -4,7 +4,7 @@ import Message from "./Message"
 
 import "./Messenger.scss"
 
-export default function Messenger() {
+export default function Messenger({channel}) {
     return (
         <div className="MessengerBody">
             <div className="MessengerMessages">

@@ -2,12 +2,12 @@
 .MessageBody {
     display: flex;
     width: 100%;
-    height: 32px;
+    height: fit-content;
 
     padding: 0px 16px 0px 16px;
 
     &.Extended {
-        height: 48px;
+        //height: 48px;
     }
 
     &:hover {
@@ -23,11 +23,24 @@
 }
 
 .MessageAvatar {
-    max-width: 32px;
+    background-color: rgb(29, 29, 29);
+    border-radius: 64px;
+
+    max-width: 48px;
     max-height: 32px;
 
-    min-width: 32px;
+    min-width: 48px;
     min-height: 32px;
+
+    &.Extended {
+        max-width: 48px;
+        max-height: 48px;
+    
+        min-width: 48px;
+        min-height: 48px;
+
+        padding: 4px;
+    }
 }
 
 .MessageControlsBody {
@@ -35,8 +48,17 @@
     
     max-width: 86px;
     min-width: 86px;
+
+    max-height: 32px;
+
+    visibility: collapse;
 }
 
 .MessageButton {
-    
+
+}
+
+.MessageTextBody {
+    word-wrap: break-word;
+    white-space:pre-wrap;
 }
