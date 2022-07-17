@@ -4,10 +4,10 @@ import { GarlicAPI } from "./Garlic";
 import Message from "./Message";
 import Object from "./Object"
 
-export default class Friend extends Object {
+export default class User extends Object {
     Username: string;
     Motd: string;
-    FriendChannel: Channel;
+    UserChannel: Channel;
 
     constructor(id: string) {
         super(id);
@@ -18,13 +18,13 @@ export default class Friend extends Object {
                 this.Username = json.username;
                 this.Motd = json.motd;
                 if(json.channel) {
-                    this.FriendChannel = new Channel(json.channel);
+                    this.UserChannel = new Channel(json.channel);
                 }
             })
         })
     }
 
     GetChannel(): Channel {
-        return this.FriendChannel;
+        return this.UserChannel;
     }
 }

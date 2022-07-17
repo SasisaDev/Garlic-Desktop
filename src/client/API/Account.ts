@@ -1,6 +1,6 @@
 import Object from "./Object"
 import Guild from "./Guild";
-import Friend from "./Friend";
+import Friend from "./User";
 
 import { GarlicAPI } from "./Garlic";
 

@@ -38,11 +38,14 @@ export default function AuthBody() {
 
         ((window as any).Application as GarlicApplication).FetchAccount(login, password).then(acc => {
             if(!acc) {
-                
+                console.log("Unable to fetch");
                 return;
             }
             (window as any).Account = acc;
             (window as any).electron.SetCookie({login: login, password: password});
+            dispatch(SetScreen(ScreenView.Guilds));
+        }).catch(err => {
+            console.log(err);
         });
     }
 
@@ -64,7 +67,7 @@ export default function AuthBody() {
                     <InputField text="password" id="passwordInput"/>
                     <h5 className="AuthTextHyperlink Remark">Recover password</h5>
                 </div>
-                <Button className="AuthButton">Login</Button>
+                <Button className="AuthButton" onClick={AttemptLogin}>Login</Button>
                 <h5 className="AuthText Remark">You may not have an account. <h5 className="AuthTextHyperlink">Register</h5></h5>
                 <h5 className="AuthTextHyperlink Remark" onClick={()=>{dispatch(SetScreen(ScreenView.Guilds))}}>Offline</h5>
             </div>

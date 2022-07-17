@@ -1,0 +1,42 @@
+
+.MessageBody {
+    display: flex;
+    width: 100%;
+    height: 32px;
+
+    padding: 0px 16px 0px 16px;
+
+    &.Extended {
+        height: 48px;
+    }
+
+    &:hover {
+        background-color: rgb(18, 18, 18);
+    }
+}
+
+.MessageElement {
+    display: inline;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+.MessageAvatar {
+    max-width: 32px;
+    max-height: 32px;
+
+    min-width: 32px;
+    min-height: 32px;
+}
+
+.MessageControlsBody {
+    display: flex;
+    
+    max-width: 86px;
+    min-width: 86px;
+}
+
+.MessageButton {
+    
+}

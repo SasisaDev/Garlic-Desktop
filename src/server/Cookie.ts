@@ -1,7 +1,7 @@
 const COOK_fs = require('fs');
 const COOK_path = require('path');
 
-const COOKIE_LOCATION = COOK_path.joint(__dirname, "/Baked");
+const COOKIE_LOCATION = COOK_path.join(__dirname, "/Baked");
 
 function UpdateCookies(cookie) {
     // read old cookies
@@ -14,7 +14,13 @@ function UpdateCookies(cookie) {
 }
 
 function GetCookies(): any {
-    return JSON.parse(COOK_fs.readFileSync(COOKIE_LOCATION, 'utf8'));
+    try {
+        return JSON.parse(COOK_fs.readFileSync(COOKIE_LOCATION, 'utf8'));
+    } catch (err) {
+        console.log(err);
+        COOK_fs.writeFileSync(COOKIE_LOCATION, JSON.stringify({}));
+        return null;
+    }
 }
 
 module.exports = {
