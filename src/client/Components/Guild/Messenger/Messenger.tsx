@@ -12,7 +12,7 @@ export default function Messenger({channel}) {
                 <Message message={null}></Message>
             </div>
             <div className="MessengerInputBody">
-                <input className="MessengerInput"></input>
+                <textarea className="MessengerInput"></textarea>
                 <div className="MessengerInputSend">{'>'}</div>
             </div>
         </div>
