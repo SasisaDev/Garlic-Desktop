@@ -36,6 +36,8 @@ export default class Channel extends Object{
     PinnedMessages: Set<Message>;
     Description: string;
 
+    Category: Category;
+
     ParentGuild: Guild;
 
     SendMessage(msg: string) {
@@ -62,6 +64,21 @@ export default class Channel extends Object{
 
                 const filteredMessages = [...this.LoadedMessages];
                 quicksort.QuickSort({current: filteredMessages});
+
+                //Build Row
+                let lastAccount: Account = null;
+                for(let i = filteredMessages.length-1; i >= 0; i--) {
+                    if(i < filteredMessages.length-1) {
+                        if(filteredMessages[i].Account === lastAccount) {
+                            if(filteredMessages[i+1].InRow < 8) {
+                                filteredMessages[i].InRow = filteredMessages[i+1].InRow + 1;
+                            } else {
+                                filteredMessages[i].InRow = 0;
+                            }
+                        }
+                    }
+                    lastAccount = filteredMessages[i].Account;
+                }
                 
                 this.LoadedMessages = new Set(filteredMessages);
             })

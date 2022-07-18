@@ -7,4 +7,5 @@ export default class Message extends Object{
     Message: string;
     GuildID: string;
     Date: number;
+    InRow: number;
 }

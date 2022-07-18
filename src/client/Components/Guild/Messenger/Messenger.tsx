@@ -1,4 +1,5 @@
 import React from "react"
+import Channel from "../../../API/Channel";
 
 import Message from "./Message"
 
@@ -16,8 +17,15 @@ export default function Messenger({channel}) {
     return (
         <div className="MessengerBody">
             <div className="MessengerMessages">
-                <Message message={null} row={1}></Message>
                 <Message message={null}></Message>
+                <Message message={null}></Message>
+                {
+                    ((channel as Channel) ?
+                    [...(channel as Channel).LoadedMessages].map(obj => (
+                        <Message message={obj}/>
+                        )
+                    ) : null)
+                }
             </div>
             <div className="MessengerInputBody">
                 <textarea className="MessengerInput" id="inputChannel" onInput={AutoGrow}></textarea>

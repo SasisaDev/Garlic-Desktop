@@ -2,9 +2,11 @@ import Object from "./Object"
 import Channel from "./Channel";
 import { GarlicAPI } from "./Garlic";
 import Account from "./Account";
+import Category from "./Category";
 
 export default class Guild extends Object{
     Channels: Set<Channel>;
+    Categories: Set<Category>;
     Name: string;
     Icon: string;
 

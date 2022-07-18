@@ -157,6 +157,10 @@ app.whenReady().then(() => {
   })
 })
 
+app.on('close', () => {
+  mainWindow.hide();
+})
+
 app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') app.quit()
 
